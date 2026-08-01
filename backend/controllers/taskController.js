@@ -11,7 +11,7 @@ function getAllTasks(req, res) {
 
 function getTaskById(req, res) {
   const taskId = parseInt(req.params.id);
-  const task = taskService.getTask(taskId);
+  const task = taskService.getTaskById(taskId);
 
   if (!task) {
     return res.status(404).json({
