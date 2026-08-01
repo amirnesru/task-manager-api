@@ -35,7 +35,7 @@ function createNewTask(req, res) {
   }
 
   const newTask = {
-    id: taskService.getAllTasks().length + 1,
+    id: Math.max(...taskService.getAllTasks().map(task => task.id)) + 1,
     title: taskData.title,
     completed: taskData.completed ?? false,
     priority: taskData.priority,
