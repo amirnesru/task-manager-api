@@ -4,7 +4,7 @@ function getAllTasks() {
   return taskData;
 }
 
-function getTask(id) {
+function getTaskById(id) {
   return taskData.find((task) => id === task.id);
 }
 
@@ -35,7 +35,7 @@ function updateTask(id, updatedData) {
 
 module.exports = {
   getAllTasks,
-  getTask,
+  getTaskById,
   createNewTask,
   updateTask,
   deleteTask,
