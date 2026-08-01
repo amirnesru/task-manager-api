@@ -1,15 +1,15 @@
 const taskService = require("../services/taskService");
 
-exports.getAllTasks = (req, res) => {
+function getAllTasks(req, res) {
   const tasks = taskService.getAllTasks();
 
   res.status(200).json({
     message: "Fetched all tasks successfully",
     data: tasks,
   });
-};
+}
 
-exports.getTaskById = (req, res) => {
+function getTaskById(req, res) {
   const taskId = parseInt(req.params.id);
   const task = taskService.getTask(taskId);
 
@@ -18,19 +18,22 @@ exports.getTaskById = (req, res) => {
       message: "Task not found",
     });
   }
+
   res.status(200).json({
     message: "Fetched task successfully",
     data: task,
   });
-};
+}
 
-exports.createTask = (req, res) => {
+function createNewTask(req, res) {
   const taskData = req.body;
+
   if (!taskData.title || !taskData.priority) {
     return res.status(400).json({
       message: "Title and priority are required",
     });
   }
+
   const newTask = {
     id: taskService.getAllTasks().length + 1,
     title: taskData.title,
@@ -44,9 +47,9 @@ exports.createTask = (req, res) => {
     message: "Task created successfully",
     data: createdTask,
   });
-};
+}
 
-exports.deleteTask = (req, res) => {
+function deleteTask(req, res) {
   const taskId = parseInt(req.params.id);
   const task = taskService.deleteTask(taskId);
 
@@ -55,28 +58,41 @@ exports.deleteTask = (req, res) => {
       message: "Task not found",
     });
   }
+
   res.status(200).json({
     message: "Task deleted successfully",
     data: task,
   });
-};
+}
 
-exports.updateTask = (req, res) => {
+function updateTask(req, res) {
   const taskId = parseInt(req.params.id);
   const taskData = req.body;
+
   if (Object.keys(taskData).length === 0) {
     return res.status(400).json({
       message: "No data provided to update",
     });
   }
+
   const task = taskService.updateTask(taskId, taskData);
+
   if (!task) {
     return res.status(404).json({
       message: "Task not found",
     });
   }
+
   res.status(200).json({
     message: "Task updated successfully",
     data: task,
   });
+}
+
+module.exports = {
+  getAllTasks,
+  getTaskById,
+  createNewTask,
+  deleteTask,
+  updateTask,
 };
