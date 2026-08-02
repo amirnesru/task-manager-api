@@ -11,7 +11,12 @@ app.use(cors());
 app.use("/api/tasks", taskRoutes);
 
 const PORT = process.env.PORT || 5000;
+const APP_NAME = process.env.APP_NAME || "Task Manager API";
+
+app.get("/", (req, res) => {
+  res.send(APP_NAME);
+});
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`${APP_NAME} running on port ${PORT}`);
 });
