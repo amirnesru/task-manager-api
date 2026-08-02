@@ -1,0 +1,284 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=1920&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.9);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f59e0b;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #f59e0b;
+}
+
+.author-name {
+  font-size: 14px;
+  color: #cbd5e1;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 12px;
+  border-radius: 15px;
+}
+
+.author-name span {
+  color: #f59e0b;
+  font-weight: bold;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+  flex: 1;
+}
+
+
+.card {
+  background-color: rgba(15, 23, 42, 0.85);
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.task-input-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.box-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #f59e0b;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+}
+
+#task-input {
+  flex: 1;
+  padding: 12px 15px;
+  font-size: 15px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  background-color: #0f172a;
+  color: #ffffff;
+  outline: none;
+}
+
+#task-input:focus {
+  border-color: #f59e0b;
+}
+
+.priority-select {
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  background-color: #0f172a;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+}
+
+#add-btn {
+  background-color: #f59e0b;
+  color: #0f172a;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#add-btn:hover {
+  background-color: #d97706;
+}
+
+
+.progress-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-text {
+  font-size: 14px;
+  color: #cbd5e1;
+}
+
+.progress-bar {
+  width: 200px;
+  height: 10px;
+  background-color: #334155;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#progress-fill {
+  width: 0%;
+  height: 100%;
+  background-color: #10b981;
+  transition: width 0.3s;
+}
+
+
+.task-list-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-card {
+  background-color: #1e293b;
+  border-left: 5px solid #f59e0b;
+  padding: 15px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-card.completed {
+  opacity: 0.6;
+  border-left-color: #10b981;
+}
+
+.task-card.completed .task-title {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.task-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.task-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.task-meta {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.priority-badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.badge-low {
+  background-color: #0284c7;
+  color: white;
+}
+.badge-medium {
+  background-color: #d97706;
+  color: white;
+}
+.badge-high {
+  background-color: #dc2626;
+  color: white;
+}
+
+
+.action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-complete {
+  color: #34d399;
+}
+.btn-complete:hover {
+  background-color: #064e3b; 
+}
+
+.btn-edit {
+  color: #60a5fa;
+}
+.btn-edit:hover {
+  background-color: #1e3a8a; 
+}
+
+.btn-delete {
+  color: #f87171;
+}
+.btn-delete:hover {
+  background-color: #7f1d1d; 
+}
+
+.empty-msg {
+  text-align: center;
+  color: #94a3b8;
+  padding: 20px;
+  font-size: 14px;
+}
+
+footer {
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.9);
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #94a3b8;
+  border-top: 1px solid #334155;
+  margin-top: auto;
+}
+
+footer strong {
+  color: #f59e0b;
+}
