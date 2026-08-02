@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskManager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <header>
+        <div class="brand-name">TaskNest</div>
+        <div class="author-name">Developer: <span>Amir Nesru</span></div>
+    </header>
+
+    <div class="container">
+
+        <div class="card">
+            <div class="box-title">Create New Task</div>
+            <form id="task-form" class="task-input-box">
+                <input type="hidden" id="edit-index" value="-1">
+                
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Enter task title..." required autocomplete="off">
+                    
+                    <select id="priority-input" class="priority-select">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium" selected>Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+
+                    <button type="submit" id="add-btn">Add Task</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card progress-box">
+            <span id="progress-text" class="progress-text">0 of 0 tasks completed</span>
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="task-list-title">My Tasks</div>
+            <div id="task-list" class="task-list"></div>
+            <div id="empty-msg" class="empty-msg" style="display: none;">No tasks found. Add a task above to get started!</div>
+        </div>
+
+    </div>
+
+    <footer>
+        Designed & Built by <strong>Amir Nesru</strong> &copy; 2026. All rights reserved.
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
