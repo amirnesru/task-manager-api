@@ -39,6 +39,11 @@ function createNewTask(req, res) {
     title: taskData.title,
     completed: taskData.completed ?? false,
     priority: taskData.priority,
+      date: new Date().toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }),
   };
 
   const createdTask = taskService.createNewTask(newTask);
