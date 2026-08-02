@@ -33,6 +33,13 @@ function createNewTask(req, res) {
       message: "Title and priority are required",
     });
   }
+   const validPriorities = ["low", "medium", "high"];
+
+  if (!validPriorities.includes(taskData.priority)) {
+    return res.status(400).json({
+      message: "Invalid priority",
+    });
+  }
 
   const newTask = {
     id: Math.max(...taskService.getAllTasks().map(task => task.id)) + 1,
