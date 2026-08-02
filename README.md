@@ -2,8 +2,6 @@
 
 > A simple full-stack task management application that helps users organize, prioritize, and track their daily tasks.
 
-🚀 **Live Demo:** Coming Soon
-
 ---
 
 ## 📌 About The Project
@@ -48,7 +46,6 @@ Data
 - HTML
 - CSS
 - JavaScript (ES6)
-- Fetch API
 
 ### Backend
 - Node.js
